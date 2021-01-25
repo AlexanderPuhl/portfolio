@@ -8,6 +8,10 @@ const ProjectStyles = styled.section`
   padding: 50px 20px;
   background-color: var(--secondary-background);
   color: var(--light-text);
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -82,97 +86,99 @@ export default function Projects() {
   `);
   return (
     <ProjectStyles id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <Img fluid={data.vehicleApp.childImageSharp.fluid} />
-          <div className="card-content">
-            <h3>Vehicle Tracker</h3>
-            <p className="project-description">
-              Vehicle Tracker will help you keep track of various stats for your
-              vehicle. This is a great way to keep an eye on the health of your
-              vehicle. It's also just fun to collect this sort of data and look
-              back over it!
-            </p>
-            <p className="project-tech">
-              React/Redux, Node.js, Express, Mongo/Mongoose, Bcrypt/Passport
-            </p>
-            <a
-              href="https://github.com/AlexanderPuhl/vehicle-tracker-client"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://vehicle-tracker-client.herokuapp.com/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Visit the Website
-            </a>
-          </div>
-        </li>
-        <li>
-          <Img fluid={data.spanishApp.childImageSharp.fluid} />
-          <div className="card-content">
-            <h3>Speak Spanish</h3>
-            <p className="project-description">
-              Speak Spanish allows users to learn Spanish through a technique
-              called "Spaced Repetition". With the spaced repetition technique,
-              there will be increasing intervals of time before reviewing a word
-              you have successfully learned.
-            </p>
-            <p className="project-tech">
-              React/Redux, Node.js, Express, Mongo/Mongoose, Bcrypt/Passport,
-              Responsivevoice.org
-            </p>
-            <a
-              href="https://github.com/AlexanderPuhl/speak-spanish-client"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://speak-spanish-client.herokuapp.com/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Visit the Website
-            </a>
-          </div>
-        </li>
-        <li>
-          <Img fluid={data.cozySpacesApp.childImageSharp.fluid} />
-          <div className="card-content">
-            <h3>Cozy Spaces</h3>
-            <p className="project-description">
-              Cozy Spaces is focused on helping users find the coziest spaces to
-              hang out in their area. Need a cozy space to warm up your toes and
-              light up your soul? Find one here!
-            </p>
-            <p className="project-tech">
-              React/Redux, Node.js, Express, Mongo/Mongoose, Bcrypt/Passport,
-              Google Maps API
-            </p>
-            <a
-              href="https://github.com/thinkful-ei23/cozy-spaces-client"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://cozy-spaces-client.herokuapp.com/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Visit the Website
-            </a>
-          </div>
-        </li>
-      </ul>
+      <div className="container">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <Img fluid={data.vehicleApp.childImageSharp.fluid} />
+            <div className="card-content">
+              <h3>Vehicle Tracker</h3>
+              <p className="project-description">
+                Vehicle Tracker will help you keep track of various stats for
+                your vehicle. This is a great way to keep an eye on the health
+                of your vehicle. It's also just fun to collect this sort of data
+                and look back over it!
+              </p>
+              <p className="project-tech">
+                React/Redux, Node.js, Express, Mongo/Mongoose, Bcrypt/Passport
+              </p>
+              <a
+                href="https://github.com/AlexanderPuhl/vehicle-tracker-client"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://vehicle-tracker-client.herokuapp.com/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Visit the Website
+              </a>
+            </div>
+          </li>
+          <li>
+            <Img fluid={data.spanishApp.childImageSharp.fluid} />
+            <div className="card-content">
+              <h3>Speak Spanish</h3>
+              <p className="project-description">
+                Speak Spanish allows users to learn Spanish through a technique
+                called "Spaced Repetition". With the spaced repetition
+                technique, there will be increasing intervals of time before
+                reviewing a word you have successfully learned.
+              </p>
+              <p className="project-tech">
+                React/Redux, Node.js, Express, Mongo/Mongoose, Bcrypt/Passport,
+                Responsivevoice.org
+              </p>
+              <a
+                href="https://github.com/AlexanderPuhl/speak-spanish-client"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://speak-spanish-client.herokuapp.com/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Visit the Website
+              </a>
+            </div>
+          </li>
+          <li>
+            <Img fluid={data.cozySpacesApp.childImageSharp.fluid} />
+            <div className="card-content">
+              <h3>Cozy Spaces</h3>
+              <p className="project-description">
+                Cozy Spaces is focused on helping users find the coziest spaces
+                to hang out in their area. Need a cozy space to warm up your
+                toes and light up your soul? Find one here!
+              </p>
+              <p className="project-tech">
+                React/Redux, Node.js, Express, Mongo/Mongoose, Bcrypt/Passport,
+                Google Maps API
+              </p>
+              <a
+                href="https://github.com/thinkful-ei23/cozy-spaces-client"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://cozy-spaces-client.herokuapp.com/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Visit the Website
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </ProjectStyles>
   );
 }

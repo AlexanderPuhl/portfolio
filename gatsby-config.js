@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'portfolio',
+    title: "Alex Puhl's Portfolio",
+    siteUrl: 'https://www.alexpuhl.com/',
   },
   plugins: [
     'gatsby-plugin-sitemap',
