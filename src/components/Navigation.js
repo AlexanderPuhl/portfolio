@@ -2,72 +2,69 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 
-const NavigationStyles = styled.header`
-  position: fixed;
-  z-index: 100;
-  width: 100%;
+const NavigationStyles = styled.nav`
   background-color: #363636;
-  display: flex;
-  height: 60px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  a {
-    color: var(--light-text);
-    font-size: 16px;
+  padding: 0 15px;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  .logo {
+    font-size: 20px;
+    padding: 8px 10px 8px 0;
   }
-  a:hover {
+  .item {
+    padding: 10px;
+  }
+  .logo a:hover,
+  .item a:hover {
     color: var(--teal-text);
   }
-  nav {
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    svg {
-      font-size: 25px;
-      position: relative;
-      top: 0px;
-      right: 0px;
-      transform: scale(1);
-      transition: transform ease-in-out 250ms;
-    }
-    svg:hover {
-      cursor: pointer;
-      transform: scale(1.25);
-    }
-    ul {
-      background-color: var(--primary-background);
-      width: 100%;
-      padding: 16px;
-      width: 100%;
-      position: relative;
-      top: 60px;
-      transform-origin: center-top;
-      transition: transform 0.2s ease-out 0s;
-      transform: scaleY(0);
-      li {
-        padding: 16px;
-      }
-    }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
   }
-
-  ul.close {
+  li a {
+    color: var(--light-text);
+    cursor: pointer;
+    display: block;
+    padding: 15px 5px;
+  }
+  .toggle {
+    order: 1;
+    font-size: 20px;
+  }
+  .item {
+    order: 2;
+    width: 100%;
+    text-align: center;
     display: none;
   }
-  ul.open {
-    display: flex;
-    flex-direction: column;
-    transform: scaleY(1);
+  ul.open .item {
+    display: block;
   }
-  /* @media (min-width: 800px) {
-    svg {
+
+  /* Tablet Menu */
+  @media (min-width: 700px) {
+    ul {
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      .logo {
+        flex: 1;
+        order: 0;
+      }
+      .item {
+        order: 1;
+        display: block;
+        width: auto;
+      }
+    }
+
+    .toggle {
       display: none;
     }
-    ul {
-      display: flex;
-    }
-  } */
+  }
 `;
 
 export default function Navigation() {
@@ -75,24 +72,34 @@ export default function Navigation() {
 
   return (
     <NavigationStyles>
-      <a href="/">Alexander Puhl</a>
-      <nav>
-        <FaBars onClick={() => toggleHamburger(!hamburgerState)} />
-        <ul className={hamburgerState ? 'open' : 'close'}>
-          <li>
-            <a>HOME</a>
-          </li>
-          <li>
-            <a>ABOUT</a>
-          </li>
-          <li>
-            <a>PROJECTS</a>
-          </li>
-          <li>
-            <a>CONTACT</a>
-          </li>
-        </ul>
-      </nav>
+      <ul className={hamburgerState ? 'open' : 'close'}>
+        <li className="logo">
+          <a href="https://www.alexpuhl.com">Alexander Puhl</a>
+        </li>
+        <li className="item">
+          <a href="#hero">HOME</a>
+        </li>
+        <li className="item">
+          <a href="#about">ABOUT</a>
+        </li>
+        <li className="item">
+          <a href="#projects">PROJECTS</a>
+        </li>
+        <li className="item">
+          <a href="#contact">CONTACT</a>
+        </li>
+        <li>
+          <a
+            className="toggle"
+            role="button"
+            tabIndex={0}
+            onClick={() => toggleHamburger(!hamburgerState)}
+            onKeyPress={() => toggleHamburger(!hamburgerState)}
+          >
+            <FaBars />
+          </a>
+        </li>
+      </ul>
     </NavigationStyles>
   );
 }

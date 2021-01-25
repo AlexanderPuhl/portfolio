@@ -1,133 +1,96 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 const HeroStyles = styled.section`
-  color: black;
+  background-color: var(--primary-background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%23766e6e' fill-opacity='0.4' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+  color: var(--light-text);
+  min-height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  h1 {
+    font-size: 50px;
+    font-weight: 100;
+  }
+  p {
+    font-size: 26px;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    a {
+      padding: 16px;
+      svg {
+        color: var(--light-text);
+        font-size: 40px;
+        display: inline-block;
+        transform: scale(1);
+        transition: transform ease-in-out 250ms;
+      }
+      svg:hover {
+        color: var(--teal-text);
+        transform: scale(1.25);
+      }
+    }
+  }
+
+  @media (min-width: 700px) {
+    h1 {
+      font-size: 75px;
+    }
+  }
 `;
 
 export default function Hero() {
   return (
-    <HeroStyles>
-      <h1>Hero</h1>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus ut est
-      sit amet pharetra. Maecenas a ante turpis. Sed at enim at lectus hendrerit
-      laoreet non eu dolor. Cras vitae vestibulum ante. Aenean feugiat eget sem
-      ut malesuada. Suspendisse lobortis sit amet eros tempor interdum. In
-      eleifend nisl at ornare congue. Fusce at placerat mauris, in tempus ex.
-      Aliquam convallis eu ex ut imperdiet. Phasellus egestas enim lorem, sed
-      ultrices leo molestie sit amet. Aenean volutpat lectus et tellus aliquam,
-      at dictum libero gravida. Fusce mattis maximus nibh, id dapibus eros
-      auctor at. Etiam volutpat, ipsum quis auctor porttitor, nunc enim congue
-      purus, sed mollis tellus justo in mauris. Sed ullamcorper dui a est
-      hendrerit venenatis. Fusce quis ipsum rhoncus ipsum accumsan elementum
-      quis quis tellus. Cras molestie arcu eget elementum feugiat. Maecenas at
-      orci sagittis, ullamcorper velit quis, malesuada est. Aenean id nunc
-      ultrices, feugiat nisi et, lacinia dui. Vestibulum sit amet velit mi.
-      Fusce dolor ipsum, sodales non turpis eu, feugiat facilisis urna. Quisque
-      volutpat dignissim diam vel varius. Nulla non cursus ligula, quis sodales
-      tortor. In a luctus ipsum. Aliquam pellentesque sodales est, sit amet
-      blandit turpis gravida sed. Quisque vitae justo varius, aliquet nibh ut,
-      mollis neque. Sed at eleifend ipsum. Nam ac faucibus felis, nec elementum
-      nulla. Nulla aliquam molestie felis, vel auctor enim faucibus vel. Nulla
-      dui neque, maximus ut feugiat in, hendrerit vitae dui. Nam interdum
-      blandit purus, id dapibus tellus gravida a. In hac habitasse platea
-      dictumst. Morbi sed leo sit amet metus dignissim ullamcorper. Suspendisse
-      dignissim convallis tristique. Aliquam erat volutpat. Sed feugiat vitae
-      lectus ac facilisis. Duis pellentesque ex quis faucibus condimentum. Etiam
-      iaculis sapien non leo viverra, in dapibus justo finibus. Nam eu elementum
-      mi, vitae pharetra ex. Vestibulum ante ipsum primis in faucibus orci
-      luctus et ultrices posuere cubilia curae; Praesent eu ipsum dapibus,
-      molestie lacus a, bibendum nulla. Ut eu lorem sit amet mi feugiat
-      ultricies eu id magna. Proin eleifend, mi sit amet rhoncus posuere, nunc
-      nisl porta risus, eget sodales leo dolor ac ipsum. Sed imperdiet lobortis
-      risus, feugiat tempus justo laoreet quis. Vivamus suscipit ornare ipsum, a
-      viverra lorem pretium at. Nulla porta leo non dui volutpat, sed commodo
-      nisi vehicula. Nullam at imperdiet sem, sed accumsan diam. Proin
-      vestibulum est enim, ac pulvinar nisl suscipit at. Praesent id dui sed
-      nibh commodo imperdiet. Aenean vel turpis luctus, feugiat ligula a,
-      porttitor velit. Proin facilisis, est in posuere ultricies, ex quam
-      aliquet elit, ac interdum metus nunc ac orci. Quisque eget euismod sem, ac
-      porttitor erat. Proin nec eleifend justo, rutrum tristique ante. Nulla
-      dictum facilisis tortor, a molestie enim ultricies rutrum. Morbi euismod
-      orci est, a commodo mauris vehicula sed. Donec dolor nunc, gravida eget
-      dui nec, cursus egestas orci. Nulla at pellentesque nisl. Maecenas
-      tincidunt egestas mi. Aliquam rhoncus enim in augue vehicula blandit.
-      Aliquam ac sapien suscipit, elementum elit id, viverra leo. Proin sed nibh
-      vitae sapien varius tempus. Aenean vel odio molestie, tempus quam
-      eleifend, posuere quam. Donec porta maximus luctus. Sed varius in arcu
-      eget efficitur. Curabitur ut ex ut neque porttitor tristique ut sit amet
-      ante. Integer aliquet vehicula tempor. Proin mi elit, rutrum a nulla
-      semper, rhoncus rutrum quam. In ac euismod mauris. Nulla vitae maximus
-      eros. Cras luctus libero non quam vestibulum, sit amet maximus mi
-      hendrerit. Sed nec dictum neque. Pellentesque convallis condimentum sapien
-      vitae fringilla. Phasellus rutrum id augue et aliquam. Nunc lacinia dictum
-      urna, eget dapibus tortor elementum non. Pellentesque in tellus odio.
-      Maecenas feugiat eget ex vitae ultrices. Cras malesuada aliquam sapien ut
-      placerat. Pellentesque fringilla eros pretium aliquet consequat. Morbi ac
-      tincidunt lacus, non euismod tortor. Vivamus congue consectetur erat, quis
-      hendrerit velit ullamcorper id. Suspendisse ullamcorper ipsum sed mattis
-      mollis. Nulla tristique, sem non dignissim tristique, sem purus facilisis
-      orci, in iaculis est ligula vel neque. Cras consequat nibh a nulla luctus
-      fringilla. Ut euismod leo vel magna lobortis vestibulum. Ut id laoreet
-      augue. Aliquam blandit laoreet elit, vitae cursus ligula. Sed quis dolor
-      ac nisl tempus hendrerit hendrerit ut arcu. Praesent lectus lectus,
-      efficitur vitae imperdiet vel, ornare eu tellus. Vestibulum eget felis et
-      ligula vestibulum laoreet. Cras venenatis orci eget felis ornare molestie.
-      Nulla facilisi. Quisque sodales, nisi eu scelerisque luctus, nisi nulla
-      ultrices mauris, et porttitor justo sem id sem. Suspendisse sed lorem
-      ornare, placerat lectus rhoncus, faucibus sapien. Integer interdum rutrum
-      tellus, pellentesque pretium diam imperdiet ullamcorper. Quisque ac turpis
-      vitae nunc efficitur bibendum. Mauris neque elit, egestas et sollicitudin
-      sodales, euismod vitae nibh. Duis consequat congue varius. Maecenas ut
-      massa nunc. Quisque elementum mi sed erat blandit bibendum id et magna.
-      Phasellus pellentesque dolor ut eleifend imperdiet. Suspendisse non tellus
-      blandit, convallis dui ac, tempus diam. Phasellus eget tristique ante.
-      Quisque ipsum sem, pellentesque non felis non, porttitor rutrum ligula.
-      Suspendisse pellentesque neque et magna eleifend, id facilisis purus
-      egestas. Pellentesque habitant morbi tristique senectus et netus et
-      malesuada fames ac turpis egestas. Nulla facilisi. Sed porta mollis
-      tincidunt. Proin maximus ligula id augue varius fringilla. Sed
-      sollicitudin tempus mauris, vel vehicula urna scelerisque ac. Cras eros
-      elit, faucibus a rhoncus quis, mollis feugiat est. Quisque ac semper diam.
-      Maecenas in sapien ac leo commodo convallis vehicula ut quam. Morbi
-      ultrices nibh dui, nec egestas nibh fermentum ut. Pellentesque feugiat
-      mauris eget nisl sagittis scelerisque. Duis ac lectus ultrices, sagittis
-      magna tincidunt, ullamcorper purus. Integer eu nibh vel ex ullamcorper
-      tincidunt. Quisque massa tellus, feugiat vitae ultrices dignissim, gravida
-      id sem. Vestibulum eros justo, cursus eu nisi vel, convallis lacinia
-      magna. In accumsan, augue sed lacinia dictum, lectus nibh imperdiet dolor,
-      ac faucibus turpis lorem nec turpis. Donec auctor mi a ultricies lobortis.
-      Etiam et varius est, a maximus lorem. Nullam pulvinar ornare felis vitae
-      ullamcorper. Morbi lobortis purus lobortis augue laoreet blandit. Praesent
-      vestibulum sollicitudin nisi, mattis vestibulum enim faucibus quis.
-      Curabitur vel tellus sagittis nibh finibus pulvinar. Quisque a lorem a
-      nunc egestas placerat. Nam eu elit orci. Suspendisse hendrerit ipsum ut
-      urna euismod, at dignissim ligula tempor. Duis id risus lacinia, faucibus
-      dolor at, commodo magna. Praesent sagittis malesuada neque, sed elementum
-      quam laoreet ut. Sed aliquam lobortis risus, sit amet accumsan dolor.
-      Suspendisse in pretium nibh, iaculis tristique sapien. Sed elementum sem
-      vestibulum lorem consequat sodales. Sed id ex quis eros finibus bibendum.
-      Ut sagittis imperdiet ex id aliquam. Integer eleifend tincidunt cursus.
-      Aliquam sed felis diam. Nullam ac ligula tristique, volutpat velit nec,
-      tempus erat. Maecenas non imperdiet ex, eu cursus quam. Nunc est quam,
-      luctus vel vulputate eu, blandit eu mi. Duis venenatis ornare dui id
-      finibus. Vivamus volutpat posuere enim et interdum. Etiam ac viverra
-      metus. Praesent tempor ultrices congue. Duis lorem nibh, dictum et sem ac,
-      tincidunt vulputate dolor. Donec posuere faucibus metus ac blandit. Mauris
-      sed luctus massa, a vestibulum urna. Morbi ac nisl ante. Suspendisse
-      potenti. Cras in convallis justo. Vivamus lobortis mi augue, id consequat
-      felis dapibus in. In interdum turpis vitae enim pellentesque sagittis.
-      Phasellus vel enim vitae magna fringilla hendrerit vitae a elit. Phasellus
-      rhoncus malesuada enim id consequat. Donec nulla est, pulvinar eget sapien
-      a, iaculis tincidunt risus. Sed ut venenatis nibh. In ultricies cursus
-      mauris vel suscipit. Aenean massa tellus, tincidunt ut massa vel,
-      fermentum consequat ex. Ut tincidunt mollis ipsum, at facilisis arcu
-      tempor at. Quisque tristique ante in libero efficitur porttitor. Sed
-      sodales est et purus posuere, nec iaculis enim sollicitudin. In in
-      volutpat ante, at malesuada purus. Donec pulvinar ipsum sit amet dui
-      iaculis consequat. Donec ornare lorem sed erat vulputate pulvinar.
-      Pellentesque suscipit vestibulum risus id dapibus. Nulla finibus nulla at
-      bibendum finibus.
+    <HeroStyles id="hero">
+      <h1>Alex Puhl</h1>
+      <p>
+        Hi there! I'm a full-stack web developer based in Salt Lake City, Utah.
+      </p>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/AlexanderPuhl"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <FaGithub />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/alexander-puhl/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <FaLinkedin />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/AlexPuhl"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <FaTwitter />
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:alexpuhldeveloper@gmail.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <FaEnvelope />
+          </a>
+        </li>
+      </ul>
     </HeroStyles>
   );
 }

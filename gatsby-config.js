@@ -3,11 +3,11 @@ module.exports = {
     title: 'portfolio',
   },
   plugins: [
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: 'src/images/favicon.png',
       },
     },
     {

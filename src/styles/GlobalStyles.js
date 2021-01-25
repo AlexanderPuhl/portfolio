@@ -25,10 +25,25 @@ const GlobalStyles = createGlobalStyle`
   }
   main {
     flex-grow: 1;
-    padding: 10px;
+  }
+  h1,h2 {
+    text-align: center;
+    margin: 20px 0px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  p {
+    line-height: 24px;
+    margin: 16px 0;
   }
   a {
-    color: white;
     text-decoration: none;
   }
   ul {
