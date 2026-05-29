@@ -1,0 +1,66 @@
+// Reset, box-sizing, typography, core layout
+// src/styles/_base.scss
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margins and paddings for layout control */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 3. Allow percentage-based heights in the application */
+html,
+body {
+	height: 100%;
+}
+
+/* 4. Improve media defaults and make images fluid */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* 5. Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 6. Avoid text-overflow on headings and long words */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 7. Typography baseline & smoothing */
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--color-bg, #121212); // Fallback if variables haven't loaded
+	color: var(--color-text, #e0e0e0);
+	font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+/* 8. Clean up list styles for semantic containers (like nav and social rows) */
+ul,
+ol {
+	list-style: none;
+}

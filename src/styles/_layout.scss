@@ -1,0 +1,31 @@
+// src/styles/_layout.scss
+
+.global-header {
+	display: flex;
+	align-items: center;
+	padding: var(--space-md) var(--space-lg);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: var(--color-bg);
+}
+
+.global-nav {
+	display: flex;
+	align-items: center;
+	gap: var(--space-lg);
+
+	a {
+		color: var(--color-text);
+		text-decoration: none;
+		font-size: 0.95rem;
+		transition: color var(--transition-fast);
+
+		&:hover {
+			color: var(--color-primary);
+		}
+
+		&.active {
+			color: var(--color-primary);
+			font-weight: 600;
+		}
+	}
+}
